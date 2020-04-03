@@ -7,11 +7,13 @@ require('./models/Users');
 require('./services/passport');
 
 mongoose.connect(
-    keys.mongoURI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    }
-).then(console.log('Conexión establecida con éxito'));
+        keys.mongoURI, {
+            useNewUrlParser: true,
+            useCreateIndex: true,
+            useUnifiedTopology: true
+        }
+    ).then(() => console.log("Conexión	establecida con exito"))
+    .catch(err => console.log(err));
 
 const app = express();
 
