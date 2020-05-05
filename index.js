@@ -12,7 +12,7 @@ mongoose.connect(
             useCreateIndex: true,
             useUnifiedTopology: true
         }
-    ).then(() => console.log("Conexión	establecida con exito"))
+    ).then(() => console.log("Conexión establecida con exito"))
     .catch(err => console.log(err));
 
 const app = express();
