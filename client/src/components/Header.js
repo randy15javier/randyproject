@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-
+import onlineSales from "./onlineSales";
+import Payments from "./Payments";
 
 class Header extends Component {
   renderContent() {
@@ -21,13 +22,16 @@ class Header extends Component {
             <a href="#">Inicio</a>
           </li>,
           <li key="3">
-            <a href="/surveys/onlineSales">Ventas en linea</a>
+            <a href="/home/onlineSales">Ventas en linea</a>
           </li>,
           <li key="4">
             <a href="#">Historia</a>
           </li>,
           <li key="5">
             <a href="#">Contacto</a>
+          </li>,
+          <li key="6" style={{ margin: "0	10px" }}>
+            Compras: {this.props.auth.credits}
           </li>,
           <li key="2">
             <a href="/api/logout">Salir</a>
@@ -41,7 +45,7 @@ class Header extends Component {
     return (
       <nav>
         <div className="nav-wrapper">
-          <Link to={this.props.auth ? "/surveys" : "/"} className="brandlogo">
+          <Link to={this.props.auth ? "/home" : "/"} className="brandlogo">
             Farmacia Meridional
           </Link>
           <ul id="nav-mobile" className="right	hide-on-med-and-down">

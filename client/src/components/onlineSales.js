@@ -1,49 +1,72 @@
 import React from "react";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import Payments from "./Payments"
 
-const onlineSales = () => {
-  return [
-    // < class="row">
-    <div class="col s12 m7" style={{ display: "flex", justifyContent: "space-between" }}>
-      <div class="card" style={{ height: "335px", width: "250px" }}>
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1576072060548-105cb2a8e670?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"></img>
-          <span class="card-title">PPMS</span>
-        </div>
-        <div class="card-content">
-          <p>Le sirve para no quedar embarazada, es muy efectiva</p>
-        </div>
-        <div class="card-action">
-          <a href="#">Comprar</a>
-        </div>
-      </div>
+export default function AddressForm() {
+  return (
+    <React.Fragment>
+      <Typography variant="h6" gutterBottom>
+        Datos personales y de facturación
+      </Typography>
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            required
+            id="firstName"
+            name="firstName"
+            label="Nombres"
+            fullWidth
+            autoComplete="fname"
+          />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            required
+            id="lastName"
+            name="lastName"
+            label="Apellidos"
+            fullWidth
+            autoComplete="lname"
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField
+            required
+            id="address1"
+            name="address1"
+            label="Dirección"
+            fullWidth
+            autoComplete="billing address-line1"
+          />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            required
+            id="city"
+            name="city"
+            label="Nombre del medicamento"
+            fullWidth
+            autoComplete="billing address-level2"
+          />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            id="state"
+            name="state"
+            label="Cantidad a comprar"
+            fullWidth
+          />
+        </Grid>
+      <Payments/>
+      </Grid>
+    </React.Fragment>
 
-      <div class="card" style={{ height: "335px", width: "250px" }}>
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1576072060548-105cb2a8e670?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"></img>
-          <span class="card-title">Artromed</span>
-        </div>
-        <div class="card-content">
-          <p>Le sirve para cuando se lesione la rodilla y los meniscos</p>
-        </div>
-        <div class="card-action">
-          <a href="#">Comprar</a>
-        </div>
-      </div>
 
-      <div class="card" style={{ height: "335px", width: "250px" }}>
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1576072060548-105cb2a8e670?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"></img>
-          <span class="card-title">Remdesivir</span>
-        </div>
-        <div class="card-content">
-          <p>Le sirve para curar el coronavirus, SARS y más</p>
-        </div>
-        <div class="card-action">
-          <a href="#">Comprar</a>
-        </div>
-      </div>
-    </div>,
-  ];
-};
+  );
 
-export default onlineSales;
+  
+}
