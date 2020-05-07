@@ -10,7 +10,7 @@ const Body = () => {
           <span class="card-title">PPMS</span>
         </div>
         <div class="card-content">
-          <p>Le sirve para no quedar embarazada, es muy efectiva</p>
+          <p>Poderoso método anticonceptivo, es muy efectivo</p>
         </div>
         <div class="card-action">
           <a href="#">Comprar</a>
